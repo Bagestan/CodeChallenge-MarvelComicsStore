@@ -22,20 +22,17 @@ export class MarvelApiService {
   constructor(private http: HttpClient) {
     const url = this.createURL('comics');
     this.http.get(url).subscribe((data) => {
-      console.log('🚀 ~ data:', data);
       this.allComics.next(data as ComicDataWrapper);
     });
   }
 
   private createURL(path: string) {
     const ts = Date.now();
-
     const params = new URLSearchParams({
       ts: ts.toString(),
       apikey: this.publicKey,
       hash: Md5.md5(ts + this.privateKey + this.publicKey),
     }).toString();
-
     const endpoint = `${this.apiUrl}${path}?`;
 
     return endpoint + params;
