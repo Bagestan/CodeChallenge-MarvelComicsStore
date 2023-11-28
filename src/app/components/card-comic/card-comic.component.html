@@ -1,0 +1,26 @@
+<mat-card class="card">
+  <img
+    mat-card-image
+    [src]="image"
+    [alt]="comic.title"
+    [ngClass]="{ unavailable: !comic.prices[0].price }"
+  />
+
+  @if (!comic.prices[0].price) {
+  <div class="unavailable-text">Sold Out</div>
+  }
+
+  <h3 class="title">{{ comic.title }}</h3>
+  <mat-card-content class="contentBox">
+    <div class="actions">
+      <h2 class="price">{{ comic.prices[0].price | currency }}</h2>
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="comic.prices[0].price ? false : true"
+      >
+        <i class="material-icons">add_shopping_cart</i>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
