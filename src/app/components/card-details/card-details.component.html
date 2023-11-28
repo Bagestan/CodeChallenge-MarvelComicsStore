@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{ comic.comic.title }}</h1>
+<img
+  mat-card-image
+  [src]="image"
+  [alt]="comic.comic.title"
+  [ngClass]="{ unavailable: !comic.comic.prices[0].price }"
+/>
+
+<div mat-dialog-content>
+  This dialog showcases the title, close, content and actions elements.
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

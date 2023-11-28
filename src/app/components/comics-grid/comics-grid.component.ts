@@ -17,11 +17,9 @@ export class ComicsGridComponent {
   comicsList!: Comic[];
 
   constructor(private marvelService: MarvelApiService) {
-    console.log('iniciou');
     this.marvelService.getComics().subscribe((comics) => {
       if (comics.data) {
         this.comicsList = comics.data.results;
-        console.log('🚀 ~ this.comicsList:', this.comicsList);
       }
     });
   }
