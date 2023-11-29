@@ -9,8 +9,9 @@ import {
   MatDialogModule,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { Comic } from '../../services/comic-types';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { Comic } from '../../types/comic-types';
 
 @Component({
   selector: 'app-card-details',
@@ -23,15 +24,15 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
+    MatCardModule,
   ],
   templateUrl: './card-details.component.html',
   styleUrl: './card-details.component.scss',
 })
 export class CardDetailsComponent {
-  image!: string;
+  comic: Comic;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public comic: { comic: Comic }) {
-    console.log(comic.comic);
-    this.image = `${this.comic.comic.thumbnail.path}/portrait_incredible.jpg`;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { comic: Comic }) {
+    this.comic = data.comic;
   }
 }

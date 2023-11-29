@@ -1,14 +1,58 @@
-<h1 mat-dialog-title>{{ comic.comic.title }}</h1>
-<img
-  mat-card-image
-  [src]="image"
-  [alt]="comic.comic.title"
-  [ngClass]="{ unavailable: !comic.comic.prices[0].price }"
-/>
+<mat-card>
+  <h1 mat-dialog-title>{{ comic.title }}</h1>
 
-<div mat-dialog-content>
-  This dialog showcases the title, close, content and actions elements.
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+  <mat-dialog-content>
+    <div class="cardContent">
+      <img
+        mat-card-image
+        [src]="comic.thumbnail.path + '/portrait_incredible.jpg'"
+        [alt]="comic.title"
+        [ngClass]="{ unavailable: !comic.prices[0].price }"
+      />
+
+      <div class="cardDetails">
+        <div class="published details">
+          <h3>Published:</h3>
+          <p>{{ comic.dates[0].date | date : "dd/MM/yyyy" }}</p>
+        </div>
+
+        <div class="creators details">
+          <h3>Creators:</h3>
+          <ul>
+            @for (creator of comic.creators.items | slice:0:3; track $index){
+            <li>{{ creator.name }} - {{ creator.role }}</li>
+            } @empty {
+            <li>Unavailable</li>
+            }
+          </ul>
+        </div>
+
+        <div class="description details">
+          <h3>Description:</h3>
+          @if (comic.textObjects[0]) {
+
+          <p>{{ comic.textObjects[0].text }}</p>
+          } @else {
+          <p>Description Unavailable</p>
+          }
+        </div>
+
+        <h2>price: {{ comic.prices[0].price | currency }}</h2>
+      </div>
+    </div>
+
+    <mat-dialog-actions class="buttons">
+      <button mat-button mat-dialog-close>
+        <i class="material-icons">cancel</i>
+      </button>
+
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="comic.prices[0].price ? false : true"
+      >
+        <i class="material-icons">add_shopping_cart</i>
+      </button>
+    </mat-dialog-actions>
+  </mat-dialog-content>
+</mat-card>

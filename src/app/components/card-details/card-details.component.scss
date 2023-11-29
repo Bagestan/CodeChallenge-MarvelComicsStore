@@ -1,0 +1,53 @@
+mat-card {
+  max-width: 800px;
+}
+
+mat-card mat-dialog-content .cardContent img {
+  border-radius: 5px;
+}
+
+mat-card .cardContent .cardDetails h1 {
+  margin: 0;
+}
+
+mat-card .cardContent .details {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+mat-card mat-dialog-content mat-dialog-actions {
+  padding: 0;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.unavailable {
+  opacity: 10%;
+}
+
+mat-card mat-dialog-content .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//
+//
+
+@media (min-width: 780px) {
+  mat-card img {
+  }
+
+  mat-card .cardContent .details {
+    display: flex;
+  }
+
+  .cardContent {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+  }
+}
