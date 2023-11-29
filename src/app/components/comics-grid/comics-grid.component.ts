@@ -8,6 +8,7 @@ import {
   MatSlideToggleModule,
 } from '@angular/material/slide-toggle';
 import { Comic } from '../../types/comic-types';
+import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-comics-grid',
@@ -25,7 +26,10 @@ import { Comic } from '../../types/comic-types';
 export class ComicsGridComponent {
   comicsList!: Comic[];
 
-  constructor(private marvelService: MarvelApiService) {
+  constructor(
+    private marvelService: MarvelApiService,
+    public checkout: CheckoutService
+  ) {
     this.getComics();
   }
 
@@ -45,5 +49,9 @@ export class ComicsGridComponent {
     } else {
       this.getComics();
     }
+  }
+
+  log() {
+    this.checkout.logSignal();
   }
 }

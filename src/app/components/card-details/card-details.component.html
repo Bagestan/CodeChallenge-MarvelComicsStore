@@ -50,6 +50,7 @@
         mat-flat-button
         color="primary"
         [disabled]="comic.prices[0].price ? false : true"
+        (click)="addComicCheckout()"
       >
         <i class="material-icons">add_shopping_cart</i>
       </button>
