@@ -2,7 +2,7 @@
   <img
     (click)="openDialog()"
     mat-card-image
-    [src]="image"
+    [src]="comic.thumbnail.path + '/portrait_incredible.jpg'"
     [alt]="comic.title"
     [ngClass]="{ unavailable: !comic.prices[0].price }"
   />

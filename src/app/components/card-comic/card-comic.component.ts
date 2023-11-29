@@ -23,20 +23,13 @@ import { CardDetailsComponent } from '../card-details/card-details.component';
 export class CardComicComponent {
   @Input() comic!: Comic;
 
-  image!: string;
   constructor(private dialog: MatDialog) {}
-
-  ngOnInit() {
-    this.image = `${this.comic?.thumbnail.path}/portrait_incredible.jpg`;
-  }
 
   openDialog() {
     const dialogRef = this.dialog.open(CardDetailsComponent, {
       data: { comic: this.comic },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }
