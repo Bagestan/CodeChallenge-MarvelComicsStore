@@ -2,12 +2,12 @@ import { Component, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarvelApiService } from '../../services/marvel-api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Comic } from '../../services/comic-types';
 import { CardComicComponent } from '../card-comic/card-comic.component';
 import {
   MatSlideToggleChange,
   MatSlideToggleModule,
 } from '@angular/material/slide-toggle';
+import { Comic } from '../../types/comic-types';
 
 @Component({
   selector: 'app-comics-grid',

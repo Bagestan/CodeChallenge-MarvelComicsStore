@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import * as Md5 from 'js-md5';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ComicDataWrapper } from './comic-types';
+import { ComicDataWrapper } from '../types/comic-types';
 
 @Injectable({
   providedIn: 'root',

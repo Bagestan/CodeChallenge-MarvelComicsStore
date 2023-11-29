@@ -6,3 +6,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
