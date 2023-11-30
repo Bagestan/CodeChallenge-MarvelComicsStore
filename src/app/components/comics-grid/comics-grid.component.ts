@@ -1,14 +1,10 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarvelApiService } from '../../services/marvel-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComicComponent } from '../card-comic/card-comic.component';
-import {
-  MatSlideToggleChange,
-  MatSlideToggleModule,
-} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Comic } from '../../types/comic-types';
-import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-comics-grid',
@@ -19,17 +15,13 @@ import { CheckoutService } from '../../services/checkout.service';
     CardComicComponent,
     MatSlideToggleModule,
   ],
-  providers: [MarvelApiService],
   templateUrl: './comics-grid.component.html',
   styleUrl: './comics-grid.component.scss',
 })
 export class ComicsGridComponent {
   comicsList!: Comic[];
 
-  constructor(
-    private marvelService: MarvelApiService,
-    public checkout: CheckoutService
-  ) {
+  constructor(private marvelService: MarvelApiService) {
     this.getComics();
   }
 
@@ -49,9 +41,5 @@ export class ComicsGridComponent {
     } else {
       this.getComics();
     }
-  }
-
-  log() {
-    this.checkout.logSignal();
   }
 }

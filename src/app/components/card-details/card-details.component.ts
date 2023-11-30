@@ -27,7 +27,6 @@ import { CheckoutService } from '../../services/checkout.service';
     MatDialogClose,
     MatCardModule,
   ],
-  providers: [CheckoutService],
   templateUrl: './card-details.component.html',
   styleUrl: './card-details.component.scss',
 })

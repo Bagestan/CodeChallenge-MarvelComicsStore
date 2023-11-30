@@ -18,7 +18,6 @@ import { CheckoutService } from '../../services/checkout.service';
     MatDialogModule,
     CardDetailsComponent,
   ],
-  providers: [CheckoutService],
   templateUrl: './card-comic.component.html',
   styleUrl: './card-comic.component.scss',
 })
