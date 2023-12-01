@@ -1,5 +1,6 @@
 .wrapper {
   max-width: 960px;
+  min-height: auto;
   width: 80%;
   margin: 0 auto;
   padding: 1rem;
@@ -20,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .wrapper mat-card img {
@@ -57,11 +59,11 @@
   flex-direction: column;
   max-height: fit-content;
   padding: 1rem;
+  width: 100%;
 }
 
 .wrapper .checkoutFinal .discountWrapper {
   display: flex;
-  justify-content: space-between;
   gap: 0.5rem;
   flex-wrap: nowrap;
 }

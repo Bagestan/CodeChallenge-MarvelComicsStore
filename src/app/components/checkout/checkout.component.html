@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="cardWrapper">
-    @for (comic of checkoutItens; track $index) {
+    @for (comic of checkout.getCheckoutItens(); track $index) {
 
     <mat-card class="checkoutCards">
       <img
@@ -17,6 +17,7 @@
             mat-mini-fab
             color="accent"
             aria-label="Example icon button with a menu icon"
+            (click)="removeFromCart(comic.comic)"
           >
             <mat-icon> remove_shopping_cart </mat-icon>
           </button>
@@ -35,11 +36,11 @@
   <mat-card class="checkoutFinal">
     <div class="discountWrapper">
       <mat-form-field class="example-form-field">
-        <mat-label>Discount Code</mat-label>
+        <mat-label>Discount Code (ELCODE)</mat-label>
 
         <input matInput type="text" [(ngModel)]="code" />
 
-        @if (code) {
+        @if (this.checkout.code()) {
         <button
           matSuffix
           mat-icon-button
@@ -62,7 +63,7 @@
     </div>
 
     <div class="final">
-      <h3>Total: {{ price | currency }}</h3>
+      <h3>Total: {{ checkout.price() | currency }}</h3>
 
       <button mat-flat-button color="primary">Buy!</button>
     </div>

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { CheckoutService } from '../../services/checkout.service';
-import { CheckoutItens } from '../../types/comic-types';
+import { CheckoutItens, Comic } from '../../types/comic-types';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -24,14 +24,11 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './checkout.component.scss',
 })
 export class CheckoutComponent {
-  checkoutItens: CheckoutItens[] = [];
   price = 0;
-  code = 'ELCODE';
+  code = '';
 
-  constructor(private checkout: CheckoutService, private router: Router) {
-    this.checkoutItens = this.checkout.getCheckoutItens();
-
-    if (this.checkoutItens.length > 0) {
+  constructor(public checkout: CheckoutService, private router: Router) {
+    if (this.checkout.getCheckoutItens().length > 0) {
     } else {
       this.router.navigate(['']);
     }
@@ -40,6 +37,11 @@ export class CheckoutComponent {
   }
 
   calcDiscount() {
-    this.checkout.calcDiscount(this.code);
+    this.checkout.updateDiscount(this.code);
+    this.checkout.calcTotalPrice();
+  }
+
+  removeFromCart(comic: Comic) {
+    this.checkout.removeFromCart(comic);
   }
 }
