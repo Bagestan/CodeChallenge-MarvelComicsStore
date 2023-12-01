@@ -1,6 +1,6 @@
 <header>
   <mat-toolbar color="warn">
-    <div class="example-spacer">
+    <div class="example-spacer" (click)="navigate('')">
       <svg
         width="130"
         height="52"
@@ -20,9 +20,12 @@
     </div>
 
     <span class="example-spacer"></span>
-    <button mat-icon-button class="favorite-icon">
+    <button
+      mat-icon-button
+      class="favorite-icon"
+      (click)="navigate('checkout')"
+    >
       <i class="material-icons">shopping_cart</i>
     </button>
-    <i class="material-icons">remove_shopping_cart</i>
   </mat-toolbar>
 </header>

@@ -1,3 +1,8 @@
+export interface CheckoutItens {
+  comic: Comic;
+  quantity: number;
+}
+
 export interface ComicDataWrapper {
   code: number;
   status: string;

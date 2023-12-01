@@ -1,0 +1,107 @@
+.wrapper {
+  max-width: 960px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  gap: 1rem;
+
+  display: flex;
+}
+
+.wrapper .checkoutCards {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 0.5rem;
+  background-color: rgb(243, 243, 243);
+}
+
+.wrapper .cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wrapper mat-card img {
+  height: auto;
+  max-width: 10rem;
+}
+
+.wrapper mat-card .cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper mat-card .cardContent .cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.wrapper mat-card .cardContent .cardHeader h3 {
+  margin: 0;
+}
+
+.wrapper mat-card .cardContent .cardDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+
+.wrapper .checkoutFinal {
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  padding: 1rem;
+}
+
+.wrapper .checkoutFinal .discountWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.wrapper .checkoutFinal .final {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper .checkoutFinal {
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+    padding: 0.5rem;
+  }
+
+  .wrapper mat-card .cardContent .cardDetails {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .wrapper .checkoutFinal .discountWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .wrapper .checkoutFinal .final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

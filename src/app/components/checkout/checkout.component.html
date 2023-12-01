@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <div class="cardWrapper">
+    @for (comic of checkoutItens; track $index) {
+
+    <mat-card class="checkoutCards">
+      <img
+        mat-card-image
+        [src]="comic.comic.thumbnail.path + '/portrait_incredible.jpg'"
+        [alt]="comic.comic.title"
+      />
+
+      <div class="cardContent">
+        <div class="cardHeader">
+          <h3>{{ comic.comic.title }}</h3>
+
+          <button
+            mat-mini-fab
+            color="accent"
+            aria-label="Example icon button with a menu icon"
+          >
+            <mat-icon> remove_shopping_cart </mat-icon>
+          </button>
+        </div>
+
+        <div class="cardDetails">
+          <b>Quantidade: {{ comic.quantity }}</b>
+
+          <b>{{ comic.comic.prices[0].price | currency }}</b>
+        </div>
+      </div>
+    </mat-card>
+    }
+  </div>
+
+  <mat-card class="checkoutFinal">
+    <div class="discountWrapper">
+      <mat-form-field class="example-form-field">
+        <mat-label>Discount Code</mat-label>
+
+        <input matInput type="text" [(ngModel)]="code" />
+
+        @if (code) {
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="code = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
+      </mat-form-field>
+
+      <button
+        mat-fab
+        color="accent"
+        aria-label="Example icon button with a delete icon"
+        (click)="calcDiscount()"
+      >
+        <mat-icon>done</mat-icon>
+      </button>
+    </div>
+
+    <div class="final">
+      <h3>Total: {{ price | currency }}</h3>
+
+      <button mat-flat-button color="primary">Buy!</button>
+    </div>
+  </mat-card>
+</div>
