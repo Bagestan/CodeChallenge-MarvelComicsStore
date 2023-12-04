@@ -1,27 +1,19 @@
-# MarvelComics
+# Marvel Comics Store Angular App - Code Challenge Solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.2.
+## The project:
 
-## Development server
+- This is a code challenge solution build in [Angular 17](angular.dev) using the [Marvel API](developer.marvel.com/).
+- [This is link for the challenge](https://github.com/contabilizei/front-end-teste)written in Portuguese, summarily describes a task to build a Comic Store fetching data from the **Marvel API**. The goal is to display this data to the user in a list of comics, allowing the user to add comics to the checkout. Additionally, it was necessary to create a way to display more information about the products, such as the author, year of publication, characters, and a summary of the story. A checkout component was also needed to display all the added comics, enabling the user to see the individual price of the comics and the total price of the comics inside the cart.
+- In this project i used the most recent develper patterns for angular:
+  - Standalone Components
+  - Deferrable Views
+  - (The new) Control Flow
+  - Signals
+  - Routing
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  ## To run this project
+- `git clone https://github.com/Bagestan/CodeChallenge-MarvelComicsStore/tree/main`
+- `npm install`
+- `ng serve`. Then navigate to `http://localhost:4200/`.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  
