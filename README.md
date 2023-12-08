@@ -12,7 +12,7 @@
   - Routing
 
   ## To run this project
-- `git clone https://github.com/Bagestan/CodeChallenge-MarvelComicsStore/tree/main`
+- `git clone https://github.com/Bagestan/CodeChallenge-MarvelComicsStore`
 - `npm install`
 - `ng serve`. Then navigate to `http://localhost:4200/`.
 
